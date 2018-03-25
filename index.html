@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>线性代数计算器</title>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/index.js"/>
+<script src="js/math.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+    Init();
+}
+</script>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/Button.css"/>
+<link rel="icon" href="Logo.png" />
+<style></style>
+</head>
+<body style="min-width:1024px;">
+    <div class="naviBlock">
+        <span class="logo"></span>
+        <span style="padding-left:62px;height:50px;line-height:50px;font-size:28px;float:left">
+            线性代数计算器
+        </span>
+        <ul class="naviContent">
+            <a onclick="document.getElementById('mainFrame').src='Det.html';">
+            <li class="naviContent">
+                行列式计算
+            </li>
+            </a>
+            <a onclick="document.getElementById('mainFrame').src='Equation.html';">
+            <li class="naviContent">
+                方程组计算
+            </li>
+            </a>
+        </ul>
+    </div>
+    <iframe src="Det.html" id="mainFrame" frameborder=0 style="width: 100%;height:100%;">
+
+    </iframe>
+</body>
+</html>

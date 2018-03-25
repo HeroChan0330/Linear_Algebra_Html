@@ -1,0 +1,51 @@
+<html>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/Button.css"/>
+<script src="js/math.js"></script>
+<script type="text/javascript">
+window.onload=function(){
+document.getElementById("goBtn").onclick=function(){
+    nums=Array();
+    var coefficient=document.getElementById("coefficientBox").value.split("\n");
+    iptText=document.getElementById("inputBox").value.trim();
+    rows=iptText.split("\n");
+    for(var j=0;j<rows.length;j++){
+        ipts=rows[j].split(" ");
+        var arr=Array();
+        for(var i=0;i<rows.length;i++){
+            arr.push(parseInt(ipts[i]));
+        }
+        arr.push(parseInt(coefficient[j]));
+        nums.push(arr);
+    }
+    //console.log(nums);
+    //console.log(Calculate(rows.length));
+    var res=CalculateEquations(rows.length);
+    console.log(res);
+    content="";
+    for(var i=0;i<rows.length;i++){
+        content+='X'+(i+1)+'='+res[i]+"\n";
+    }
+    document.getElementById("outputArea").innerText=content;
+}
+}
+</script>
+<body>
+    <div style="height:50px;"></div>
+    <h3>方程组计算</h3><hr/>
+    <span style="width:50%;left:0px;float:left;">
+        <div class="inputBlock">
+            <textarea class="inputTextArea" id="inputBox" style="width:80%;float:left;"></textarea>
+            <textarea class="inputTextArea" id="coefficientBox" style="width:20%;float: left;"></textarea>
+        </div>
+        <br>
+        <a class="button button-block button-rounded button-primary button-large" id="goBtn">Go</a>
+    </span>
+
+    <span style="width:40%;float: left;">
+        <div class="outPutBlock">
+        <textarea class="outPutTextArea" id="outputArea"></textarea>
+        </div>
+    </span>
+</body>
+</html>
